@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const Header =()=>{
     return(
@@ -5,9 +6,9 @@ const Header =()=>{
         <header>
             <h1>Home Header</h1>
             <nav>
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/products">Products</a>
+                <Link href="/">Home</Link>
+                <Link href="/about">About</Link>
+                <Link href="/products">Products</Link>
             </nav>
         </header>
         </>
