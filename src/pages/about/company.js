@@ -1,14 +1,17 @@
-import Head from "next/head"
+import Head from "next/head";
+import Layout from "@/components/Layout";
 
-const Company = ()=>{
-    return(
+const Company = () => {
+    return (
         <>
-        <Head>
-            <title>
-                Company Page
-            </title>
-        </Head>
-        <h1>Company</h1>
+            <Head>
+                <title>
+                    Company Page
+                </title>
+            </Head>
+            <Layout page="company">
+                <h1>Company</h1>
+            </Layout>
         </>
     )
 }

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import Layout from "@/components/Layout";
 
 
 
@@ -27,8 +28,10 @@ const ProductDetail = () => {
                     {product.title}
                 </title>
             </Head>
+            <Layout page="ProductDetail">
             <img src={product.image} alt="" width={400} />
             <h1>{product.title}</h1>
+            </Layout>
         </>
     )
 }

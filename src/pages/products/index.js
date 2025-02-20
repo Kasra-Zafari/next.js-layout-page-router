@@ -18,12 +18,12 @@ const ProductsPage = () => {
 
     return (
         <>
+            <Head>
+                <title>
+                    Products Page
+                </title>
+            </Head>
             <Layout page="products">
-                <Head>
-                    <title>
-                        Products Page
-                    </title>
-                </Head>
                 <h1>Products</h1>
                 <section className="row">
                     {products.map((product) => (
