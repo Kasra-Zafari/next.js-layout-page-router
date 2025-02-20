@@ -12,8 +12,6 @@ const ProductsPage = () => {
                 setProducts(data);
             })
     }, [])
-
-    console.log(products);
     
 
     return (
@@ -24,6 +22,16 @@ const ProductsPage = () => {
                 </title>
             </Head>
             <h1>Products</h1>
+            <section className="row">
+                {products.map((product)=>(
+                    <div key={product.id} className="card">
+                        <img src={product.image} alt="" width={150}/>
+                        <h3 className="cardTitle">{product.title}</h3>
+                        <p>{product.category}</p>
+                        <p>{product.price}</p>
+                    </div>
+                ))}
+            </section>
         </>
     )
 }
