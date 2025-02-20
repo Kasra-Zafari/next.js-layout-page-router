@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const ProductsPage = () => {
@@ -12,7 +13,7 @@ const ProductsPage = () => {
                 setProducts(data);
             })
     }, [])
-    
+
 
     return (
         <>
@@ -23,13 +24,15 @@ const ProductsPage = () => {
             </Head>
             <h1>Products</h1>
             <section className="row">
-                {products.map((product)=>(
-                    <div key={product.id} className="card">
-                        <img src={product.image} alt="" width={150}/>
-                        <h3 className="cardTitle">{product.title}</h3>
-                        <p>{product.category}</p>
-                        <p>{product.price}</p>
-                    </div>
+                {products.map((product) => (
+                    <Link href={`/products/${product.id}`}>
+                        <div key={product.id} className="card">
+                            <img src={product.image} alt="" width={150} />
+                            <h3 className="cardTitle">{product.title}</h3>
+                            <p>{product.category}</p>
+                            <p>{product.price}</p>
+                        </div>
+                    </Link>
                 ))}
             </section>
         </>
