@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Layout from "@/components/Layout";
 
 const ProductsPage = () => {
 
@@ -17,24 +18,26 @@ const ProductsPage = () => {
 
     return (
         <>
-            <Head>
-                <title>
-                    Products Page
-                </title>
-            </Head>
-            <h1>Products</h1>
-            <section className="row">
-                {products.map((product) => (
-                    <Link href={`/products/${product.id}`}>
-                        <div key={product.id} className="card">
-                            <img src={product.image} alt="" width={150} />
-                            <h3 className="cardTitle">{product.title}</h3>
-                            <p>{product.category}</p>
-                            <p>{product.price}</p>
-                        </div>
-                    </Link>
-                ))}
-            </section>
+            <Layout page="products">
+                <Head>
+                    <title>
+                        Products Page
+                    </title>
+                </Head>
+                <h1>Products</h1>
+                <section className="row">
+                    {products.map((product) => (
+                        <Link href={`/products/${product.id}`}>
+                            <div key={product.id} className="card">
+                                <img src={product.image} alt="" width={150} />
+                                <h3 className="cardTitle">{product.title}</h3>
+                                <p>{product.category}</p>
+                                <p>{product.price}</p>
+                            </div>
+                        </Link>
+                    ))}
+                </section>
+            </Layout>
         </>
     )
 }
