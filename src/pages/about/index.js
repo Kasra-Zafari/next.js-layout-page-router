@@ -1,6 +1,16 @@
+import Head from "next/head";
 
-const AboutPage= ()=>{
-return <h1>About</h1>
+const AboutPage = () => {
+    return (
+        <>
+            <Head>
+                <title>
+                    About Page
+                </title>
+            </Head>
+            <h1>About</h1>
+        </>
+    )
 }
 
-export default AboutPage
+export default AboutPage;
